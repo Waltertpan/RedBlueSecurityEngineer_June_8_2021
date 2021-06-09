@@ -29,7 +29,6 @@ The following machines were identified on the network:
   - **IP Address**: 192.168.1.110
 
 ### Description of Targets
-_TODO: Answer the questions below._
 
 The target of this attack was: `Target 1` 192.168.1.110.
 
@@ -39,42 +38,53 @@ Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are pos
 
 Traffic to these services should be carefully monitored. To this end, we have implemented the alerts below:
 
-#### Name of Alert 1
-_TODO: Replace `Alert 1` with the name of the alert._
+#### Excessive HTTP Errors Monitor 
 
-Alert 1 is implemented as follows:
-  - **Metric**: TODO
-  - **Threshold**: TODO
-  - **Vulnerability Mitigated**: TODO
-  - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
+Excessive HTTP Errors Monitor is implemented as follows:
+  - **Metric**: WHEN count() GROUPED OVER top 5 ‘http.response.status_code’
+  - **Threshold**: IS ABOVE 400 FOR THE LAST 5 minutes
+  - **Vulnerability Mitigated**: Brute Force attack and enumeration
+  - **Reliability**: High reliability in detecting brute force and port scan attempts
 
-#### Name of Alert 2
-Alert 2 is implemented as follows:
-  - **Metric**: TODO
-  - **Threshold**: TODO
-  - **Vulnerability Mitigated**: TODO
-  - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
+#### HTTP Request Size Monitor
+HTTP Request Size Monitor is implemented as follows:
+  - **Metric**: WHEN sum() of http.request.bytes OVER all documents
+  - **Threshold**: IS ABOVE 3500 FOR THE LAST 5 minutes
+  - **Vulnerability Mitigated**: DDOS and Brute Force attack
+  - **Reliability**: High reliabilty in detecting suspecious activity
 
-#### Name of Alert 3
-Alert 3 is implemented as follows:
-  - **Metric**: TODO
-  - **Threshold**: TODO
-  - **Vulnerability Mitigated**: TODO
-  - **Reliability**: TODO: Does this alert generate lots of false positives/false negatives? Rate as low, medium, or high reliability.
+#### CPU Usage Monitor
+CPU Usage Monitor is implemented as follows:
+  - **Metric**: WHEN max() OF system.process.cpu.total.pct OVER all documents
+  - **Threshold**: IS ABOVE 0.5 FOR THE LAST 5 minutes
+  - **Vulnerability Mitigated**: Malicious software running in the background
+  - **Reliability**: Low reliability and generated false negatives. Did not detect the back door installed
 
-_TODO Note: Explain at least 3 alerts. Add more if time allows._
+#### Port Scan Detection Monitor 
+Port Scan Detection Monitor is implemented as follows:
+  - **Metric**: WHEN count() GROUPED OVER top 5 ‘destination.packets’
+  - **Threshold**: IS ABOVE 1500 FOR THE LAST 5 minutes
+  - **Vulnerability Mitigated**: enumeration
+  - **Reliability**: High reliability in detecting port scan attempts
+![PortScanMonitor](/Images/PortScanMonitor.png)
 
-### Suggestions for Going Further (Optional)
-_TODO_: 
-- Each alert above pertains to a specific vulnerability/exploit. Recall that alerts only detect malicious behavior, but do not stop it. For each vulnerability/exploit identified by the alerts above, suggest a patch. E.g., implementing a blocklist is an effective tactic against brute-force attacks. It is not necessary to explain _how_ to implement each patch.
+#### Brute Force Monitor 
+Brute Force Monitor is implemented as follows:
+  - **Metric**: WHEN count() GROUPED OVER top 5 ‘system.auth.ssh.event’
+  - **Threshold**: IS ABOVE 15 FOR THE LAST 2 minutes
+  - **Vulnerability Mitigated**: Brute Force
+  - **Reliability**: Medium reliability in detecting Brute Force attempts.
+![BruteForceMonitor](/Images/BruteForceMonitor.png)
 
-The logs and alerts generated during the assessment suggest that this network is susceptible to several active threats, identified by the alerts above. In addition to watching for occurrences of such threats, the network should be hardened against them. The Blue Team suggests that IT implement the fixes below to protect the network:
-- Vulnerability 1
-  - **Patch**: TODO: E.g., _install `special-security-package` with `apt-get`_
-  - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
-- Vulnerability 2
-  - **Patch**: TODO: E.g., _install `special-security-package` with `apt-get`_
-  - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
-- Vulnerability 3
-  - **Patch**: TODO: E.g., _install `special-security-package` with `apt-get`_
-  - **Why It Works**: TODO: E.g., _`special-security-package` scans the system for viruses every day_
+#### Privilege Escalation Monitor 
+Privilege Escalation is implemented as follows:
+  - **Metric**: WHEN count() GROUPED OVER top 5 ‘system.auth.sudo.tty’
+  - **Threshold**: IS ABOVE 1 FOR THE LAST 5 minutes
+  - **Vulnerability Mitigated**: Privilege Escalation 
+  - **Reliability**: High reliability in detecting privilege escalation  attempts.
+![PrivilegeEscalation](/Images/PrivilegeEscalation.png)
+
+
+
+
+
