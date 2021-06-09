@@ -50,7 +50,7 @@ HTTP Request Size Monitor is implemented as follows:
   - **Metric**: WHEN sum() of http.request.bytes OVER all documents
   - **Threshold**: IS ABOVE 3500 FOR THE LAST 5 minutes
   - **Vulnerability Mitigated**: DDOS and Brute Force attack
-  - **Reliability**: High reliabilty in detecting suspecious activity
+  - **Reliability**: High reliability in detecting suspicious activity
 
 #### CPU Usage Monitor
 CPU Usage Monitor is implemented as follows:
@@ -66,7 +66,7 @@ Port Scan Detection Monitor is implemented as follows:
   - **Vulnerability Mitigated**: enumeration
   - **Reliability**: High reliability in detecting port scan attempts
 ![PortScanMonitor](/Images/PortScanMonitor.png)
-  - **Explaination**: The detected the number of individual packets sent from 1 host in a short amount of time indicates a port scan has occurred.
+  - **Explanation**: The detected the number of individual packets sent from 1 host in a short amount of time indicates a port scan has occurred.
 ![PortScanOccured](/Images/PortScanOccured.png)
 
 #### Brute Force Monitor 
@@ -76,7 +76,7 @@ Brute Force Monitor is implemented as follows:
   - **Vulnerability Mitigated**: Brute Force
   - **Reliability**: Medium reliability in detecting Brute Force attempts.
 ![BruteForceMonitor](/Images/BruteForceMonitor.png)
-  - **Explaination**: The number of failed SSH attempted in a short amount of time indicates a brute force attack has occured.
+  - **Explanation**: The number of failed SSH attempted in a short amount of time indicates a brute force attack has occurred.
 ![SSHattempted](/Images/SSHattempted.PNG)
 
 #### Privilege Escalation Monitor 
@@ -86,6 +86,6 @@ Privilege Escalation is implemented as follows:
   - **Vulnerability Mitigated**: Privilege Escalation 
   - **Reliability**: High reliability in detecting privilege escalation  attempts.
 ![PrivilegeEscalation](/Images/PrivilegeEscalation.png)
-  - **Explaination**: The number of TTY attempted iindicates a user privilege escalation attempt has occurred.
+  - **Explanation**: The number of TTY attempted iindicates a user privilege escalation attempt has occurred.
 ![TTYattempted](/Images/TTYattempted.png)
 

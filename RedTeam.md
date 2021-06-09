@@ -35,7 +35,7 @@ The following vulnerabilities were identified on target 1:
     - Allowed for port scan and identification of vulnerable ports.
   - CWE-672: Operation on a Resource after Expiration or Release
     - The software uses, accesses, or otherwise operates on a resource after that resource has been expired, released, or revoked.
-    - Wordpress version 4.8.7 was vulnerable to user enumeration among other vulnerabilities, and allowed for discovery of users of target 1.
+    - WordPress version 4.8.7 was vulnerable to user enumeration among other vulnerabilities, and allowed for discovery of users of target 1.
   - CWE-521: Weak Password Requirements 
     - The product does not require a strong passwords, which makes it easier for attackers to compromise user accounts.
     - Allows a brute force attack to crack or guess the weak password of an user: Michael, and use the stole credentials to infiltrate the server.
