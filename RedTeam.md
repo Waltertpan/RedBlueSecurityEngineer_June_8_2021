@@ -143,5 +143,5 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
         - `nc 192.168.1.110 4444`
       - ![Backdoor](/Images/Backdoor.png)
 
-Read [Blue Team](https://github.com/walter-t-p/RedBlueSecurityEngineer_June_8_2021/blob/main/BlueTeam.md) analysis of the attack here.
+## Read [Blue Team](https://github.com/walter-t-p/RedBlueSecurityEngineer_June_8_2021/blob/main/BlueTeam.md) analysis of the attack here.
 
