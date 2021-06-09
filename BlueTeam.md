@@ -77,6 +77,8 @@ Brute Force Monitor is implemented as follows:
   - **Vulnerability Mitigated**: Brute Force
   - **Reliability**: Medium reliability in detecting Brute Force attempts.
 ![BruteForceMonitor](/Images/BruteForceMonitor.png)
+  - **Explaination**: The number of failed SSH attempted in a short amount of time indicates a brute force attack has occured.
+![SSHattempted](/Images/SSHattempted.PNG)
 
 #### Privilege Escalation Monitor 
 Privilege Escalation is implemented as follows:
@@ -85,17 +87,6 @@ Privilege Escalation is implemented as follows:
   - **Vulnerability Mitigated**: Privilege Escalation 
   - **Reliability**: High reliability in detecting privilege escalation  attempts.
 ![PrivilegeEscalation](/Images/PrivilegeEscalation.png)
-
-### Explaination of Monitors
-
-#### Port Scan Detection Monitor
-The detected the number of individual packets sent from 1 host in a short amount of time indicates a port scan has occurred.
-![PortScanOccured](/Images/PortScanOccured.png)
-
-#### Brute Force Monitor 
-The number of failed SSH attempted in a short amount of time indicates a brute force attack has occured.
-![SSHattempted](/Images/SSHattempted.PNG)
-
-#### Privilege Escalation Monitor 
-The number of TTY attempted iindicates a user privilege escalation attempt has occurred.
+  - **Explaination**: The number of TTY attempted iindicates a user privilege escalation attempt has occurred.
 ![TTYattempted](/Images/TTYattempted.png)
+
