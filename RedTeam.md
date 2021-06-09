@@ -6,7 +6,7 @@
 - Exploitation
 
 ### Network Topology
-![Network Topology](/Images/Final_project_top.JPG "Network Topology")
+![Network Topology](/Images/Final_project_top.JPG)
 
 
 
