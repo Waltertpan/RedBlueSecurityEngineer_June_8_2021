@@ -60,7 +60,21 @@ The following vulnerabilities were identified on target 1:
     - The software does not correctly perform an authorization check, which  allows attackers to bypass intended access restrictions.
     - Steven, with permission of execute python exe, was used to escalate privileges to root.
 
+Searchsploit to identify possible exploits
+```bash
+$ searchsploit SSH
+```
 ![SSHVuln](/Images/SSHVuln.png)
+
+```bash
+$ searchsploit apache
+```
+![apacheVuln](/Images/apacheVuln.png)
+
+```bash
+$ searchsploit Samba
+```
+![SambaVuln](/Images/SambaVuln.png)
 
 ### Exploitation
 
