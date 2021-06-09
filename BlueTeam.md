@@ -15,16 +15,23 @@ The following machines were identified on the network:
   - **Operating System**: Debian Kali 5.4.0
   - **Purpose**: The Penetration Tester
   - **IP Address**: 192.168.1.90
-- Name of VM 2
-  - **Operating System**:
-  - **Purpose**:
-  - **IP Address**:
-- Etc.
+- Capstone
+  - **Operating System**: Ubuntu 18.04
+  - **Purpose**: The Vulnerable Web Server
+  - **IP Address**: 192.168.1.105
+- ELK
+  - **Operating System**: Ubuntu 18.04
+  - **Purpose**: The ELK (Elasticsearch and Kibana) Stack
+  - **IP Address**: 192.168.1.100
+- Target 1
+  - **Operating System**: Linux
+  - **Purpose**: WordPress Host
+  - **IP Address**: 192.168.1.110
 
 ### Description of Targets
 _TODO: Answer the questions below._
 
-The target of this attack was: `Target 1` (TODO: IP Address).
+The target of this attack was: `Target 1` 192.168.1.110.
 
 Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are possible ports of entry for attackers. As such, the following alerts have been implemented:
 
