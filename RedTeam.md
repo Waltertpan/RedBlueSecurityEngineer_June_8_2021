@@ -5,6 +5,12 @@
 - Critical Vulnerabilities
 - Exploitation
 
+### Network Topology
+![Network Topology](/Images/Final_project_top.JPG "Network Topology")
+
+
+
+
 ### Exposed Services
 _TODO: Fill out the information below._
 
