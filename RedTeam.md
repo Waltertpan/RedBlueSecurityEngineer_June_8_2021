@@ -79,4 +79,21 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 
   - `flag4.txt`: fc3fd58dcdad9ab23faca6e9a3e581c
     - **Exploit Used**
-      - 
+      - Find user hashed password
+        - ![hash](/Images/HashPW.png)
+      - Crack user hashed password with Jack the Ripper
+        - Create a .txt file with the usernames and hash passwords
+          - ![hashtxt](/Images/HashPWtext.png)
+        - john hash_pw.txt
+          - ![Cracked](/Images/Cracked.PNG)
+      - Log in as Steven with cracked password
+        - ![SSHSteven](/Images/SSHSteven.png)
+      - Escalate to root
+        - ![UserPrivilages](/Images/UserPrivilages.png)
+        - sudo python -c ‘import pty;pty.spawn(“/bin/bash”)’
+      - Search for flag4
+        - find . -name flag4.txt
+        - ![flag4](/Images/flag4.png)
+
+
+
