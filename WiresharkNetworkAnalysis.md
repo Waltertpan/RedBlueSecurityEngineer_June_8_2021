@@ -65,5 +65,5 @@ IT shared the following about the torrent activity:
 ![LD2](/Images/LD2.png)
 
 2. Which torrent file did the user download?
-    -Betty_Boop_Rhythm_on_the_Reservation.avi.torrent
+    - Betty_Boop_Rhythm_on_the_Reservation.avi.torrent
 ![LD3](/Images/LD3.png)
