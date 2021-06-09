@@ -31,12 +31,26 @@ This scan identifies the services below as potential points of entry:
 The following vulnerabilities were identified on each target:
 - Target 1
   - CWE-200: Exposure of Sensitive Information to an Unauthorized Actor 
+    - The product exposes sensitive information to an actor that is not explicitly authorized to have access to that information.
+    - Allowed for port scan and identification of vulnerable ports.
   - CWE-672: Operation on a Resource after Expiration or Release
+    - The software uses, accesses, or otherwise operates on a resource after that resource has been expired, released, or revoked.
+    - Wordpress version 4.8.7 was vulnerable to user enumeration among other vulnerabilities, and allowed for discovery of users of target 1.
   - CWE-521: Weak Password Requirements 
+    - The product does not require a strong passwords, which makes it easier for attackers to compromise user accounts.
+    - Allows a brute force attack to crack or guess the weak password of an user: Michael, and use the stole credentials to infiltrate the server.
   - CWE-307: Improper Restriction of Excessive Authentication Attempts 
+    - The software does not implement sufficient measures to prevent multiple failed authentication attempts within in a short time frame, making it more susceptible to brute force attacks.
+    - Allows a brute force attack to occur.
   - CWE-256: Unprotected Storage of Credentials
+    - Storing a password in plaintext may result in a system compromise.
+    - MySQL password was stored in plain text, and used to access MySQL database.
   - CWE-522: Insufficiently Protected Credentials
+    - The product transmits or stores authentication credentials, but it uses an insecure method that is susceptible to unauthorized interception and/or retrieval.
+    - MySQL contained user passwords hashes that was cracked by John.
   - CWE-863: Incorrect Authorization Reverse shell vulnerability 
+    - The software does not correctly perform an authorization check, which  allows attackers to bypass intended access restrictions.
+    - Steven, with permission of execute python exe, was used to escalate privileges to root.
 
 ![SSHVuln](/Images/SSHVuln.png)
 
