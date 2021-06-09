@@ -8,18 +8,16 @@
 ### Network Topology
 ![Network Topology](/Images/Final_project_top.JPG)
 
-
-
-
 ### Exposed Services
 _TODO: Fill out the information below._
 
 Nmap scan results for each machine reveal the below services and OS details:
 
 ```bash
-$ nmap ... # TODO: Add command to Scan Target 1
-  # TODO: Insert scan output
+$ nmap -sS 192.168.1.110
 ```
+![Nmap Scan](/Images/NmapScan.png)
+
 
 This scan identifies the services below as potential points of entry:
 - Target 1
