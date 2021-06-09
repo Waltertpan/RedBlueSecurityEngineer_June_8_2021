@@ -8,13 +8,13 @@
 - Suggestions for Going Further
 
 ### Network Topology
-_TODO: Fill out the information below._
+![Network Topology](/Images/Final_project_top.JPG)
 
 The following machines were identified on the network:
-- Name of VM 1
-  - **Operating System**:
-  - **Purpose**:
-  - **IP Address**:
+- Kali
+  - **Operating System**: Debian Kali 5.4.0
+  - **Purpose**: The Penetration Tester
+  - **IP Address**: 192.168.1.90
 - Name of VM 2
   - **Operating System**:
   - **Purpose**:
