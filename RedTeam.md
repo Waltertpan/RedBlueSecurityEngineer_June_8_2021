@@ -36,7 +36,7 @@ The following vulnerabilities were identified on each target:
   - CWE-522: Insufficiently Protected Credentials
   - CWE-863: Incorrect Authorization Reverse shell vulnerability 
 
-!WPScan(/Images/WPScan.png)
+![WPScan](/Images/WPScan.png)
 
 ### Exploitation
 
