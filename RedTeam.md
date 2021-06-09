@@ -1,6 +1,7 @@
 # Red Team: Summary of Operations
 
 ## Table of Contents
+- Network Topology
 - Exposed Services
 - Critical Vulnerabilities
 - Exploitation
@@ -14,11 +15,18 @@
 
 Nmap scan results for each machine reveal the below services and OS details:
 
+Stealth Scan
 ```bash
 $ nmap -sS 192.168.1.110
 ```
 ![Nmap Scan](/Images/NmapScan.png)
 
+Enable OS detection, version detection, script scanning, and traceroute
+```bash
+$ nmap -A  192.168.1.110
+```
+![Nmap Scan2](/Images/NmapScan2.png)
+![Nmap Scan3](/Images/NmapScan3.png)
 
 This scan identifies the services below as potential points of entry:
 - Target 1
