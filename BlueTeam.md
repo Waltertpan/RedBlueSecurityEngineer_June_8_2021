@@ -67,6 +67,8 @@ Port Scan Detection Monitor is implemented as follows:
   - **Vulnerability Mitigated**: enumeration
   - **Reliability**: High reliability in detecting port scan attempts
 ![PortScanMonitor](/Images/PortScanMonitor.png)
+  - **Explaination**: The detected the number of individual packets sent from 1 host in a short amount of time indicates a port scan has occurred.
+![PortScanOccured](/Images/PortScanOccured.png)
 
 #### Brute Force Monitor 
 Brute Force Monitor is implemented as follows:
