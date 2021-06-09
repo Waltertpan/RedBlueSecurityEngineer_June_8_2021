@@ -9,7 +9,6 @@
 ![Network Topology](/Images/Final_project_top.JPG)
 
 ### Exposed Services
-_TODO: Fill out the information below._
 
 Nmap scan results for each machine reveal the below services and OS details:
 
@@ -21,29 +20,36 @@ $ nmap -sS 192.168.1.110
 
 This scan identifies the services below as potential points of entry:
 - Target 1
-  - List of
-  - Exposed Services
-
-_TODO: Fill out the list below. Include severity, and CVE numbers, if possible._
+  - Port 22	SSH
+  - Port 80	http
+  - Port 111	rpcbind
+  - Port 139	netbios-ssn
+  - Port 445	microsoft-ds
 
 The following vulnerabilities were identified on each target:
 - Target 1
-  - List of
-  - Critical
-  - Vulnerabilities
+  - CWE-200: Exposure of Sensitive Information to an Unauthorized Actor 
+  - CWE-672: Operation on a Resource after Expiration or Release
+  - CWE-521: Weak Password Requirements 
+  - CWE-307: Improper Restriction of Excessive Authentication Attempts 
+  - CWE-256: Unprotected Storage of Credentials
+  - CWE-522: Insufficiently Protected Credentials
+  - CWE-863: Incorrect Authorization Reverse shell vulnerability 
 
-_TODO: Include vulnerability scan results to prove the identified vulnerabilities._
+!WPScan(/Images/WPScan.png)
 
 ### Exploitation
-_TODO: Fill out the details below. Include screenshots where possible._
 
 The Red Team was able to penetrate `Target 1` and retrieve the following confidential data:
 - Target 1
-  - `flag1.txt`: _TODO: Insert `flag1.txt` hash value_
+  - `flag1.txt`: b9bbcb33ellb80be759c4e844862482d
     - **Exploit Used**
-      - _TODO: Identify the exploit used_
-      - _TODO: Include the command run_
-  - `flag2.txt`: _TODO: Insert `flag2.txt` hash value_
+      - WPScan to enumerate users
+      - wpscan --url 192.168.1.110/wordpress/ --enumerate u
+
+![SSHVuln](/Images/SSHVuln.png)
+
+  - `flag2.txt`: fc3fd58dcdad9ab23faca6e9a3e581c
     - **Exploit Used**
       - _TODO: Identify the exploit used_
       - _TODO: Include the command run_
